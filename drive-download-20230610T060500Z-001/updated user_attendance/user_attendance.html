@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USER | Attendance</title>
+
+    <link rel="stylesheet" href="assets/css/attendance.css">
+    <link rel="stylesheet" href="assets/css/user_attendance.css">
+</head>
+<body onload="initClock()">
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="logo">
+                            <img src="assets/img/logo.png">
+                            <h2>Codeversity</h2>
+                        </span>
+                    </a>
+                </li>
+                <li class="list active">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="speedometer-outline"></ion-icon>
+                        </span>
+                        <span class="text">Dashboard</span>
+                    </a>
+                </li>
+                
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="person-outline"></ion-icon>
+                        </span>
+                        <span class="text">Profile</span>
+                    </a>
+                </li>
+
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="document-text-outline"></ion-icon>
+                        </span>
+                        <span class="text">Report</span>
+                    </a>
+                </li>
+            
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                        <span class="text">Logout</span>
+                    </a>
+                </li>
+                <div class="indicator"></div>
+            </ul>
+        </div>
+        
+        
+        <!-- ============================= Main ========================== -->
+
+        <div class="main">
+            <div class="main-top">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+                    
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search here">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
+
+                <div class="user">
+                    <img src="assets/img/profile_bg1.jpg">
+                </div>
+            </div>
+    
+            <!-- ======================== Greetings ======================== -->
+            <div class="welcome" id="blur">
+                <div class="welcome-user">
+                    <h1>Welcome, <a href="#">Violet</a>!</h1>
+                    <div class="welcome-content">
+                        <h3>You're in an attendance tracker</h3>
+                        <p>Time tracking will automatically start once you clock in.</p>
+                    </div>
+                </div>
+
+                <div class="clockin-out-display">
+                    
+                </div>
+
+                <section>            
+
+                    <button class="pulse" id="pulse" onclick="utoggle()">
+                        <ion-icon name="camera-outline"></ion-icon>
+                    </button>
+                </section>
+            </div>
+
+            <section class="timeModal" id="popup">
+                <span class="icon-close" id="icon-popup" onclick="utoggle()">
+                    <ion-icon name="close"></ion-icon>
+                </span>
+
+                <div class="time-modal">
+                    <button class="time-in" onclick="utoggle()">Time In</button>
+                    <button class="time-out" onclick="utoggle()">Time Out</button>
+                </div>
+            </section>
+
+            <section class="camera-clockin" id="pop-up">
+                <div class="camera-header">
+                    <h2>Attendance Tracker</h2>
+                </div>
+
+                <span class="Micon-close" id="Micon-popup" onclick="ctoggle()">
+                    <ion-icon name="close"></ion-icon>
+                </span>
+
+                <div class="clockin">
+                    <div class="clockin-content">
+                        <div class="col-md-4 div-center table-responsive">
+                            <audio id="snapSound" src="audio/snap.wav" preload="auto"></audio>
+                    
+                            <video id="webcam" autoplay playsinline width="350" height="300"></video>
+                    
+                            <canvas id="canvas" style="display:none;"></canvas>
+                    
+                            <!-- <a id="aLogPhoto" href="#"> Download</a> -->
+                        </div>
+
+                        <div class="modal-footer">
+                            <button id="btnCapture" class="popup-close">Capture</button>
+                            <button type="button" class="btn btn-warning mx-auto text-white d-none" id="retakephoto">Retake</button>
+                            <button type="submit" class="btn btn-warning mx-auto text-white d-none" id="uploadPhoto" form="photoForm">Upload</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clockin-data">
+                    <div class="c-photo">
+                        <img src="assets/img/profile_bg3.jpg">
+                        <a href="#"><h2>Erika</h2></a>
+                        <a href="#"><p>Human Resource</p></a>
+                    </div>
+
+                    <div class="datetime">
+                        <div class="date">
+                            <span id="dayname">Day, </span>
+                            <span id="month">Month </span>
+                            <span id="daynum">00, </span>
+                            <span id="year">Year</span>
+                        </div>
+
+                        <div class="time">
+                            <span id="hours">00</span>
+                            <span>:</span>
+                            <span id="minutes">00</span>
+                            <span>:</span>
+                            <span id="seconds">00</span>
+                            <span id="session">AM</span>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="right-data">
+
+                    <label class="textInput">
+                        Name <br>
+                        <input type="text" id="textInput" placeholder="Full Name"> <br>
+                    </label> <br>
+
+                    <label>
+                        Date <br>
+                        <input type="date" id="dateInput" placeholder="DD/MM/YYYY" onfocus="this.type='date'" onblur="this.type='Text'"> <br>
+                    </label> <br>
+
+                    <label>
+                        Time <br>
+                        <input type="time" id="timeInput" placeholder="HH/MM"> <br>
+                    </label> <br>
+                </div>
+            </section>
+        </div>
+    </div>
+</html>
+<script src="assets/js/user_attendance.js"></script>
+<script src="jquery/jquery.min.3.6.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/timelog.js"></script>
+<script src="assets/js/dashboard.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

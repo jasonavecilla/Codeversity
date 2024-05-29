@@ -1,0 +1,116 @@
+:root {
+    --clr: #eee;
+    --main: #6040a7;
+    --white: #ffffff;
+    --gray: #f5f5f5;
+    --black1: #222;
+    --black2: #999;
+    --black3: #5f5f5f;
+    --mainhover: #35187578;
+    --aa: #4240a7;
+    --a: #8e5ef4;
+    --ab: #654173;
+    --abc: #351875;
+}
+
+.table thead tr th,
+.table tbody tr td {
+    border-right: 1px solid var(--white);
+}
+
+.table thead tr th:nth-child(1) {
+    width: 200px;
+    border-right: 1px solid var(--);
+}
+
+.table thead tr th:nth-child(2) {
+    width: 400px;
+}
+
+.attendances .Attendance-back {
+    width: 190px;
+}
+
+.table .create-outline:hover {
+    background: green;
+    color: var(--white);
+    transition: 0.5rem;
+    border: 1px solid transparent;
+}
+
+.table .s-trash-outline:hover {
+    background: red;
+    color: var(--white);
+    transition: 0.5rem;
+    border: 1px solid transparent;
+}
+
+.e-content .e-data{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    justify-content: space-between;
+}
+
+.e-data {
+    text-align: start;
+    max-width: 300px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.e-data input{
+    text-align: center;
+    font-size: 20px;
+    padding-left: 20px;
+}
+
+.e-data input:disabled {
+    background: var(--white);
+}
+
+.e-data label{
+    width: 100px;
+    text-align: start;
+    margin-top: 15px;
+}
+
+.s-end {
+    margin-top: 30px;
+}
+
+.e-dataname .s-shift-input{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    position: relative;
+}
+
+.s-shift-input .shift-input {
+    width: 33%;
+    font-size: 15px;
+    border: 1px solid var(--black2);
+    max-width: 230px;
+    margin-left: 15px;
+}
+
+.s-end .s-end-input {
+    display: block;
+    justify-content: space-between;
+    flex-direction: row;
+    position: relative;
+}
+
+.s-end-input .shift-input {
+    width: 33%;
+    font-size: 15px;
+    border: 1px solid var(--black2);
+    max-width: 230px;
+    margin-left: 15px;
+}
+
+.s-button {
+    display: flex;
+    justify-content: end;
+    margin: 50px;
+}

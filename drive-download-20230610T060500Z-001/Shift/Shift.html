@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shift</title>
+
+    <link rel="stylesheet" href="assets/css/shift.css">
+    <link rel="stylesheet" href="assets/css/attendance.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="logo">
+                            <img src="assets/img/logo.png">
+                            <h2>Codeversity</h2>
+                        </span>
+                    </a>
+                </li>
+                <li class="list active">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="speedometer-outline"></ion-icon>
+                        </span>
+                        <span class="text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="business-outline"></ion-icon>
+                        </span>
+                        <span class="text">Department</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="calendar-clear-outline"></ion-icon>
+                        </span>
+                        <span class="text">Attendance</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="repeat-outline"></ion-icon>
+                        </span>
+                        <span class="text">Shift</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="id-card-outline"></ion-icon>
+                        </span>
+                        <span class="text">Employee</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                        <span class="text">Logout</span>
+                    </a>
+                </li>
+                <div class="indicator"></div>
+            </ul>
+        </div>
+        
+        
+        <!-- ============================= Main ========================== -->
+
+        <div class="main">
+            <div class="main-top">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+                    
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search here">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
+
+                <div class="user">
+                    <img src="assets/img/profile_bg1.jpg">
+                </div>
+            </div>
+    
+            <!-- =============================  Shift ========================== -->
+            <div class="employee-main">
+                <h1 class="etableName">Shift</h1>
+
+                <div class="attendances" id="a_popup">
+                    <button class="Attendance-back" onclick="etoggle()">
+                        <span class="add-icon">
+                            <ion-icon name="add-circle-outline"></ion-icon>
+                        </span>
+                        <span class="text">Add New Shift</span>
+                    </button>
+
+                    <div class="attendance-list">
+                        <div class="attendanceHeader">
+                            <div class="a-header"><h2>DataTables Shift</h2></div>
+                        </div>
+
+                        <div class="generate" id="a_popup">
+
+                            <div class="generate-report">
+                                <div class="a_entries">
+                                    <label>Show</label>
+                                    <input type="number" class="entry-number">
+                                    <label>entries</label>
+                                </div>
+                                <div class="a_generate">
+                                    <label>Search:</label>
+                                    <input type="text" class="input-report">
+                                </div>
+                            </div>
+                        </div>
+
+                        <table id="dataTable" class="table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Shift Start Time</th>
+                                    <th>Shift End Time</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>01</td>
+                                    <td>08:00:00</td>
+                                    <td>16:00:00</td>
+                                    <td>
+                                        <button class="create-outline"><ion-icon name="create-outline"></ion-icon></button>
+                                        <button class="s-trash-outline"><ion-icon name="trash-outline"></ion-icon></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</html>
+<script src="assets/js/dashboard.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance</title>
+
+    <link rel="stylesheet" href="assets/css/attendance.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="logo">
+                            <img src="assets/img/logo.png">
+                            <h2>Codeversity</h2>
+                        </span>
+                    </a>
+                </li>
+                <li class="list active">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="speedometer-outline"></ion-icon>
+                        </span>
+                        <span class="text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="business-outline"></ion-icon>
+                        </span>
+                        <span class="text">Department</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="calendar-clear-outline"></ion-icon>
+                        </span>
+                        <span class="text">Attendance</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="repeat-outline"></ion-icon>
+                        </span>
+                        <span class="text">Shift</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="id-card-outline"></ion-icon>
+                        </span>
+                        <span class="text">Employee</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                        <span class="text">Logout</span>
+                    </a>
+                </li>
+                <div class="indicator"></div>
+            </ul>
+        </div>
+        
+        
+        <!-- ============================= Main ========================== -->
+
+        <div class="main">
+            <div class="main-top">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+                    
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search here">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
+
+                <div class="user">
+                    <img src="assets/img/profile_bg1.jpg">
+                </div>
+            </div>
+    
+            <!-- ============================= Attendance Report ========================== -->
+            <div class="employee-main">
+                <h1 class="etableName">Attendance</h1>
+
+                <div class="attendances" id="a_popup">
+                    <button class="Attendance-back" onclick="etoggle()">
+                        <span class="add-icon">
+                            <ion-icon name="arrow-back-circle-outline"></ion-icon>
+                        </span>
+                        <span class="text">Back</span>
+                    </button>
+
+                    <div class="attendance-list">
+                        <div class="attendanceHeader">
+                            <div class="a-header"><h2>Attendance List</h2></div>
+                            <div class="a-calendar">
+                                <input type="date" class="a_from" name="a_from" id="a-from" min="2004-04-16" max="2023-12-31">
+                                <input type="date" class="a_to" name="a_to" id="a-to" min="2004-04-16" max="2023-12-31">
+                                <select name="a_dept" id="a_dept">
+                                    <option>Administration</option>
+                                    <option>Human Resources</option>
+                                    <option>Marketing</option>
+                                    <option>Finance</option>
+                                </select>
+                                <a href="#" class="a_btn">Show</a>
+                            </div>
+                        </div>
+
+                        <div class="generate" id="a_popup">
+
+                            <div class="generate-report">
+                                <div class="a_entries">
+                                    <label>Show</label>
+                                    <input type="number" class="entry-number">
+                                    <label>entries</label>
+                                </div>
+                                <div class="a_generate">
+                                    <label>Search:</label>
+                                    <input type="text" class="input-report">
+                                    <a href="#" class="btn-report">Generate Report</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <table id="dataTable" class="table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Photo</th>
+                                    <th>Name</th>
+                                    <th>Department</th>
+                                    <th>Date</th>
+                                    <th>Join Time</th>
+                                    <th>In Status</th>
+                                    <th>Logout Time</th>
+                                    <th>Out Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>01</td>
+                                    <td class="table-image"><img src="assets/img/profile_bg3.jpg"></td>
+                                    <td>Charlotte Kherr</td>
+                                    <td>Admin</td>
+                                    <td>03-24-23</td>
+                                    <td>8:00AM</td>
+                                    <th>Late</th>
+                                    <td>3:00PM</td>
+                                    <td>Over Time</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</html>
+<script src="assets/js/dashboard.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

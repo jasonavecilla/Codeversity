@@ -1,0 +1,1176 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Ubuntu", sans-serif;
+    
+    -webkit-tap-highlight-color:transparent;
+}
+
+:root {
+    --clr: #eee;
+    --main: #6040a7;
+    --white: #ffffff;
+    --gray: #f5f5f5;
+    --black1: #222;
+    --black2: #999;
+    --black3: #5f5f5f;
+    --mainhover: #35187578;
+    --aa: #4240a7;
+    --a: #8e5ef4;
+    --ab: #654173;
+    --abc: #351875;
+    --border: #dedddd;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    /* background: var(--white); */
+    overflow-x: hidden;
+}
+.container {
+    position: relative;
+    width: 100%;
+}
+
+/* Navigation */
+.navigation {
+    position: fixed;
+    width: 280px;
+    height: 100%;
+    background: var(--main);
+    border-left: 10px solid var(--main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.navigation.active {
+    width: 80px;
+}
+
+.navigation ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.navigation ul li {
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.navigation ul li img {
+    width: 80px;
+    height: 80px;
+    margin-left: -10px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+}
+
+.logo h2 {
+    height: 100px;
+    font-weight: 500;
+    margin-top: 30px;
+    padding-left: 10px;
+}
+
+.navigation ul li:hover,
+.navigation ul li.hovered {
+    background-color: var(--white);
+}
+
+.navigation ul li:nth-child(1) {
+    margin-bottom: 10px;
+    pointer-events: none;
+}
+
+.navigation ul li:nth-child(7) {
+    position: fixed;
+    bottom: 20px;
+    pointer-events: none;
+}
+
+.navigation ul li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: var(--white);
+}
+
+.navigation ul li:hover a,
+.navigation ul li.hovered a {
+    color: var(--main);
+}
+
+.navigation ul li a .icon {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 75px;
+    text-align: center;
+}
+
+.navigation ul li a .icon ion-icon {
+    font-size: 1.75rem;
+}
+
+.navigation ul li a .text {
+   position: relative;
+   display: block;
+   padding: 0 10px;
+   height: 60px;
+   line-height: 60px;
+   text-align: start;
+   white-space: nowrap;
+} 
+
+/* curve outside */
+
+.navigation ul li:hover a::before,
+.navigation ul li.hovered a::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px var(--white);
+    pointer-events: none;
+}
+
+.navigation ul li:hover a::after,
+.navigation ul li.hovered a::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px var(--white);
+    pointer-events: none;
+}
+
+/* Main Section */
+.main {
+    position: absolute;
+    width: calc(100% - 280px);
+    left: 280px;
+    min-height: 100vh;
+    background: var(--white);
+    transition: 0.5s;
+}
+
+.main.active {
+    width: calc(100% - 80px);
+    left: 80px;
+}
+ 
+.main-top {
+    display: flex;
+    width: 100%;
+    height: 60px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.toggle {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+.search {
+    position: relative;
+    width: 400px;
+    margin: 0 10px;
+}
+
+.search label {
+    position: relative;
+    width: 100%;
+}
+
+.search label input {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    font-size: 18px;
+    outline: none;
+    border: 1px solid var(--black2);
+}
+
+.search label ion-icon {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-size: 1.2rem;
+}
+
+.user {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    /* border-radius: 50%; */
+    /* overflow: hidden; */
+    cursor: pointer;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+
+.user img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.user span {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    font-size: 0.8rem;
+}
+
+.user ul {
+    list-style: none;
+}
+
+.user ul li a:hover {
+    color: var(--main);
+}
+
+.user ul li a {
+    position: absolute;
+    bottom: 20px;
+    left: 50px;
+    color: var(--black3);
+}
+
+/* Attendance List Section*/
+.attendance {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 30px;
+    /* margin-top: 20px; */
+    text-transform: capitalize;
+}
+
+.attendance-list {
+    position: relative;
+    display: block;
+    padding: 20px;
+    min-height: 200px;
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+    overflow: none;
+}
+
+.attendanceHeader {
+    display: flex;
+    position: relative;
+    padding-bottom: 20px;
+    justify-content:space-between;
+    align-items: end;
+}
+
+.attendanceHeader h2 {
+    font-weight: 600;
+    color: var(--main);
+}
+
+.a-calendar {
+    display: flex;
+    justify-content:space-between;
+    padding-left: 10px;
+    width: 700px;
+}
+
+.a-calendar input {
+    padding: 10px;
+}
+
+.a-calendar .a_dept {
+    padding: 10px;
+}
+
+
+
+.attendanceHeader input,
+.attendanceHeader select {
+    position: relative;
+    height: 30px;
+    width: 200px;
+    border-radius: 10px;
+    border: 1px solid #a1a1a1;
+}
+
+
+.attendanceHeader .btn {
+    position: relative;
+    padding: 5px 10px;
+    background: var(--main);
+    text-decoration: none;
+    color: var(--white);
+    border-radius: 10px;
+}
+
+.etableName {
+    color: var(--black3);
+    padding-left: 25px;
+    margin-top: 50px;
+}
+
+.table {
+    border-collapse: collapse;
+    margin-top: 25px;
+    width: 100%;
+}
+
+.table-image img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid var(--main);
+}
+
+.table thead td {
+    font-weight: 600;
+}
+
+.table thead tr{
+    color: var(--white);
+    background: #6040a7;
+    text-align: left;
+    font-weight: bold;
+}
+
+.table th,
+.table td {
+    padding: 12px 15px;
+}
+
+.table th {
+    text-align: center;
+}
+
+.table thead tr th:nth-child(2) {
+    text-align: start;
+}
+
+.table tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.table tbody tr td:nth-child(2) {
+    text-align: start;
+}
+
+.table tbody tr:hover {
+    background: var(--mainhover)!important;
+    color: var(--white)!important;
+}
+
+.table tbody tr:nth-of-type(odd) {
+    background: #f3f3f3;
+}
+
+.table tr td {
+    padding: 10px;
+    text-align: center;
+}
+
+.table tbody tr.active {
+    font-weight: bold;
+    color:#6040a7;
+}
+
+.table tbody tr:last-of-type {
+    border-bottom: 2px solid #6040a7;
+}
+
+.table button {
+    padding: 6px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid #6040a7;
+}
+
+.table button:hover {
+    background: #6040a7;
+    color: #fff;
+    transition: 0.5rem;
+}
+
+.table-bordered tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.table-bordered tbody tr:nth-of-type(odd) {
+    background: #f3f3f3;
+}
+
+.table-bordered tbody tr.active {
+    font-weight: bold;
+    color: var(--main);
+}
+
+.table-bordered tbody tr:last-of-type {
+    border-bottom: 2px solid var(--main);
+}
+
+.table-bordered button {
+    padding: 6px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid var(--main);
+    background: var(--main);
+    color: var(--white);
+}
+
+.pencil-outline:hover {
+    background: green;
+    color: var(--white);
+    transition: 0.5rem;
+    border: 1px solid transparent;
+}
+
+.trash-outline:hover {
+    background: red;
+    color: var(--white);
+    transition: 0.5rem;
+    border: 1px solid transparent;
+}
+
+.pencil-outline,
+.trash-outline {
+    height: 40px;
+    width: 40px;
+}
+
+.table-bordered button ion-icon{
+    width: 20px;
+    height: 20px;
+    margin-left: -10px;
+}
+
+/* Cards */
+
+.cardBox {
+    position: relative;
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+    align-items: center;
+    margin-left: 40px;
+    overflow-x: auto;
+    max-height: 400px;
+}
+
+.cardBox .card {
+    position: relative;
+    min-width: 300px;
+    height: 310px;
+    background: var(--white);
+    text-align: center;
+    border-radius: 10px;
+    display:flex;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+    justify-content: space-between;
+    cursor: pointer;
+    align-items: center;
+    flex-direction: column;
+    right: 20px;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    height: 45%;
+    width: 100%;
+    background: var(--abc);
+    border-radius: 10px 10px 0 0;
+}
+
+.card .card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    position: relative;
+    z-index: 100;
+}
+
+.card-content .name-profession {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    color: var(--black1);
+}
+
+.name-profession .Aname {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.name-profession .Aprofession {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+
+.card .card-image {
+    width: 140px;
+    height: 140px;
+    padding: 3px;
+    border-radius: 50%;
+    background-color: var(--abc);
+}
+
+.cardBox .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--white);
+}
+
+.cardBox .card h4 {
+    text-transform: uppercase;
+    color: var(--main);
+    top: 2px;
+}
+.cardBox .card p {
+    font-size: 12px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.cardBox table {
+    margin: auto;
+}
+
+.card .per {
+    display: flex;
+    flex-direction: row;
+    margin-top: 190px;
+    position: absolute;
+}
+
+.card .per p {
+    font-size: 15px;
+    margin-top: 18px;
+}
+
+.cardBox .per span {
+    padding: 5px;
+    border-radius: 10px;
+    padding-bottom: 5px;
+}
+
+.cardBox .per ion-icon {
+    color: var(--main);
+    padding-right: 10px;
+    margin-top: 18px;
+    height: 20px;
+    width: 20px;
+}
+
+.cardBox td {
+    font-size: 14px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-left: 5px;
+}
+
+.cardBox .card button {
+    position: absolute;
+    width: 50%;
+    margin-top: 240px;
+    padding: 7px;
+    cursor: pointer;
+    border-radius: 10px;
+    background: transparent;
+    border: 1px solid #6040a7;
+}
+
+.cardBox .card button:hover {
+    background: #6040a7;
+    color: #fff;
+    transition: 0.5s;
+}
+
+.cardHeader {
+    margin-top: 20px;
+    padding-bottom: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+}
+
+.cardHeader h2 {
+    font-weight: 600;
+    color: var(--main);
+}
+
+.cardHeader .btn {
+    position: relative;
+    padding: 5px 10px;
+    background: var(--main);
+    text-decoration: none;
+    color: var(--white);
+    border-radius: 10px;
+}
+
+/* Attendance Generate Report */
+.attendances {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 30px;
+    /* margin-top: 20px; */
+    text-transform: capitalize;
+}
+
+.Attendance-back {
+    display: flex;
+    height: 40px;
+    width: 80px;
+    border-radius: 5px transparent;
+    cursor: pointer;
+    border: transparent;
+    background: var(--white);
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.1);
+}
+
+.Attendance-back .add-icon ion-icon {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.Attendance-back .add-icon {
+    background: var(--abc);
+    color: var(--white);
+    justify-content: center;
+    align-items: center;
+    width: 43px;
+    height: 42px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.Attendance-back .text {
+    background: var(--main);
+    color: var(--white);
+    justify-content: center;
+    width: 150px;
+    height: 42px;
+    text-align: center;
+    padding: 10px;
+    font-size: 1rem;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.Attendance-back .text:hover {
+    background: var(--a);
+}
+
+
+.generate {
+    display: flex;
+    position: relative;
+    padding-bottom: 20px;
+    justify-content:space-between;
+    align-items: end;
+}
+
+.generate-report {
+    display: flex;
+    justify-content:space-between;
+    padding-left: 10px;
+    width: 100%;
+}
+
+input {
+    outline: none;
+}
+
+.generate-report .input-report {
+    padding-left: 10px;
+}
+
+.generate input {
+    position: relative;
+    height: 30px;
+    width: 150px;
+    border-radius: 10px;
+    border: 1px solid #a1a1a1;
+}
+
+.generate label {
+    color: var(--black3);
+}
+
+.generate .entry-number {
+    width: 50px;
+    padding-left: 10px;
+}
+
+.generate .btn-report {
+    position: relative;
+    padding: 5px 10px;
+    background: var(--main);
+    text-decoration: none;
+    color: var(--white);
+    border-radius: 10px;
+}
+
+.generate .btn-report:hover {
+    background: red;
+}
+
+.a-calendar .a_btn {
+    position: relative;
+    padding: 5px 10px;
+    background: var(--main);
+    text-decoration: none;
+    color: var(--white);
+    border-radius: 10px;
+}
+
+/* Edit Employee Data */
+
+.edit-data {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 20px;
+    max-width: 800px;
+}
+
+.edit-employee {
+    position: relative;
+    background: var(--white);
+    margin-bottom: 20px;
+    padding: 25px;
+    box-sizing: border-box;
+    /* border: 1px solid var(--mainhover); */
+    
+}
+
+.edit-content {
+    display: flex;
+    position: relative;
+    margin-bottom: 5px;
+    flex-direction: row;
+    height: 500px;
+    width: 1200px;
+} 
+
+.edit-col1 {
+    width: 580px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--white);
+    border-radius: 10px;
+    border: 1px solid #e9e8e8;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.edit-col2 {
+    width: 800px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 15px;
+    background: var(--white);
+    border-radius: 10px;
+    border: 1px solid #e9e8e8;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.edit-photo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.edit-photo img {
+    height: 400px;
+    width: 400px;
+    padding: 20px;
+}
+
+.edit-photo label {
+    color: var(--black3);
+    padding-bottom: 20px;
+}
+
+.image {
+    font-size: 16px;
+    background: var(--white);
+    border-radius: 40px;
+    box-shadow:  5px 5px 10px var(--black3);
+    width: 250px;
+    outline: none;
+    cursor: pointer;
+}
+
+::-webkit-file-upload-button {
+    color: var(--white);
+    background: var(--abc);
+    padding: 10px;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 2px 0 2px 2px var(--mainhover);
+    outline: none;
+
+}
+
+::-webkit-file-upload-button:hover {
+    background: var(--main);
+}
+
+.etableName {
+    color: var(--black3);
+    padding-bottom: 20px;
+}
+
+.editHeader {
+    padding: 10px;
+    color: var(--main);
+    border-bottom: 1px solid var(--border);
+}
+
+.editContent,
+.contentHeader {
+    padding: 10px;
+    color: var(--black3);
+}
+
+.contentHeader p {
+    font-size: 1rem;
+    margin-top: -10px;
+    padding-bottom: 15px;
+}
+
+.e_content {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    margin-bottom: 20px;
+}
+
+.e-data input {
+    outline: none;
+    border: hidden;
+    text-decoration: none;
+    color: var(--black3);
+    font-size: 1rem;
+}
+
+.editContent input {
+    margin-top: 10px;
+    height: 30px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.e-dataname,
+.e-data {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.e-data {
+    max-width: 100px;
+    outline: none;
+}
+
+.e-dataname {
+    margin-left: -105px;
+}
+
+.e-dataname input {
+    border: 1px solid var(--border);
+    color: var(--border);
+}
+
+/*  */
+.other-data {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+}
+
+.e-other label {
+    padding-top: -10px;
+}
+
+.e-other .text{
+    padding-left: 10px;
+}
+
+.e-other input {
+    color: var(--black3);
+    height: 15px;
+    padding-left: 20px;
+}
+
+.e-other {
+    flex-direction: column;
+    max-width: 250px;
+    height: 120px;
+}
+
+.e-Edate {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction:row;
+    width: 400px;
+    right: 10px;
+}
+
+.e-Edate input {
+    width: 205px;
+    margin-right: 10px;
+    border: 1px solid var(--border);
+    margin-top: 15px;
+}
+
+.Dob-data {
+    outline: none;
+}
+
+.Hire-date {
+    outline: none;
+}
+
+.Hire-date input {
+    border: 1px solid var(--border);
+    color: var(--border);
+    width: 150px;
+}
+
+.other-data .e-gender {
+    margin-top: 50px;
+}
+
+/*  */
+
+.e_SD {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    margin-bottom: 20px;
+    width: 100%;
+    position: relative;
+}
+
+.e-department,
+.e-shift {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: 350px;
+}
+
+.e-shift select {
+    color: var(--black3);
+    font-size: 1rem;
+    height: 30px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.e-department select {
+    color: var(--black3);
+    font-size: 1rem;
+    height: 30px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-left: 10px;
+    right: 100px;
+    margin-top: 10px;
+}
+
+/* Save Changes */
+
+.e-save {
+    display: flex;
+    height: 40px;
+    width: 195px;
+    border-radius: 5px transparent;
+    cursor: pointer;
+    border: transparent;
+    background: var(--white);
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.1);
+    position: relative;
+    top: 50px;
+    margin-left: 500px;
+}
+
+.e-save .add-icon ion-icon {
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.e-save .add-icon {
+    background: var(--abc);
+    color: var(--white);
+    justify-content: center;
+    align-items: center;
+    width: 43px;
+    height: 42px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.e-save .text {
+    background: var(--main);
+    color: var(--white);
+    justify-content: center;
+    width: 150px;
+    height: 42px;
+    text-align: center;
+    padding: 10px;
+    font-size: 1rem;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.e-save .text:hover {
+    background: var(--a);
+}
+
+
+
+
+
+@media screen and (max-width: 1024px) {
+    .navigation {
+        left: -280px;
+    }
+
+    .navigation.active {
+        width: 280px;
+        left: 0;
+    }
+
+    .main {
+        width: 100%;
+        left: 0;
+    }
+
+    .main.active {
+        left: 280px;
+    }
+
+    .main-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .charts {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px ){
+    .attendance {
+        grid-template-columns: 1fr;
+    }
+
+    .attendance-list {
+        overflow-x: auto;
+    }
+
+    .attendance-list table tbody button {
+        white-space: nowrap;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    .main-cards {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .user {
+        min-width: 40px;
+    }
+
+    .navigation {
+        width: 100%;
+        left: -100%;
+        z-index: 1000;
+    }
+
+    .navigation.active {
+        width: 100%;
+        left: 0;
+    }
+
+    .toggle {
+        z-index: 10001;
+    }
+
+    .main.active .toggle {
+        color: var(--white);
+        position: fixed;
+        left: -400px;
+        left: initial;
+    }
+    
+}

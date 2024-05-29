@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+:root {
+    --clr: #eee;
+    --main: #6040a7;
+    --white: #ffffff;
+    --gray: #f5f5f5;
+    --black1: #222;
+    --black2: #999;
+    --black3: #5f5f5f;
+    --mainhover: #35187578;
+    --aa: #4240a7;
+    --a: #8e5ef4;
+    --ab: #654173;
+    --abc: #351875;
+}
+
+.profile-container {
+    display: block;
+    font-family: "Ubuntu", sans-serif;
+}
+
+h1 {
+    position: absolute;
+    top: 12%;
+    left: 50px;
+    color: var(--black3);
+}
+
+.profile-setting {
+    width: 65vmin;
+    background: var(--main);
+    position: absolute;
+    left: 50px;
+    top: 20%;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.tabs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+h3 {
+    background-color: var(--main);
+    color: var(--white);
+    text-align: center;
+    padding: 15px 0;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.tab-content {
+    background: var(--white);
+    padding: 50px 40px;
+    justify-content: space-between;
+}
+
+.tab-content div{
+    display: none;
+}
+
+.tab-content .active {
+    display: block;
+}
+
+.tabs .active {
+    background-color: var(--white);
+    color: var(--main);
+}
+
+.profile-data {
+    margin-bottom: 15px;
+    color: var(--black3);
+    padding: 10px;
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: 2fr 1fr;
+}
+
+#p-img {
+    position: relative;
+    display: flex !important;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+
+#p-img input {
+    padding-top: 10px;
+
+}
+
+.profile-data label {
+    font-size: 15px;
+    font-weight: 500;
+    width: 150px;
+}
+
+#p-img img {
+    height: 250px;
+    width: 300px;
+    padding: 20px;
+}
+
+.profile-data input {
+    font-size: 15px;
+    padding: 5px;
+    margin-left: 20px;
+    width: 35vmin;
+    border: 1px solid var(--black2);
+    border-radius: 5px;
+    color: var(--black3);
+}
+
+.profile-btn button {
+    padding: 10px;
+    width: 10vmin;
+    border: 1px solid var(--main);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btnprofile {
+    background: var(--main);
+    color: var(--white);
+}
+

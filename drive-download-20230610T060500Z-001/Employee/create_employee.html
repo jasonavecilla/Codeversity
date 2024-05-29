@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Employee</title>
+
+    <link rel="stylesheet" href="assets/css/create_employee.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="logo">
+                            <img src="assets/img/logo.png">
+                            <h2>Codeversity</h2>
+                        </span>
+                    </a>
+                </li>
+                <li class="list active">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="speedometer-outline"></ion-icon>
+                        </span>
+                        <span class="text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="business-outline"></ion-icon>
+                        </span>
+                        <span class="text">Department</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="calendar-clear-outline"></ion-icon>
+                        </span>
+                        <span class="text">Attendance</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="repeat-outline"></ion-icon>
+                        </span>
+                        <span class="text">Shift</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="id-card-outline"></ion-icon>
+                        </span>
+                        <span class="text">Employee</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                        <span class="text">Logout</span>
+                    </a>
+                </li>
+                <div class="indicator"></div>
+            </ul>
+        </div>
+
+        <!-- ============================= Main ========================== -->
+
+        <div class="main">
+            <div class="main-top">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+                    
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search here">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
+
+                <div class="user">
+                    <img src="assets/img/profile_bg1.jpg">
+                </div>
+            </div>
+
+            <!-- ============================= Employee Data Table ========================== -->
+            <div class="employee-main"  id="blur">
+                <h1 class="etableName">Employee</h1>
+                <button class="employee-title" onclick="etoggle()">
+                    <span class="add-icon">
+                        <ion-icon name="add-circle-outline"></ion-icon>
+                    </span>
+                    <span class="text">Add Employee</span>
+                </button>
+
+                <div class="ecard-body">
+                    <div class="table-responsive">
+                        <table class="table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <span><h4>DataTables Employee</h4></span>
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Shift</th>
+                                <th>Gender</th>
+                                <th>Image</th>
+                                <th>DOB</th>
+                                <th>Hire Date</th>
+                                <th>Actions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>01</td>
+                                    <td>001</td>
+                                    <td>Charlotte Kherr</td>
+                                    <td>8:00:00 - 5:00:00</td>
+                                    <td>Female</td>
+                                    <td class="table-image"><img src="assets/img/profile_bg3.jpg"></td>
+                                    <td>12-07-1984</td>
+                                    <td>04-26-2023</td>
+                                    <td class="edit-icon">
+                                        <button class="pencil-outline"><ion-icon name="pencil-outline"></ion-icon></button>
+                                        <button class="trash-outline"><ion-icon name="trash-outline"></ion-icon></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wrapper" id="popup">
+                <span class="icon-close" id="icon-popup" onclick="etoggle()">
+                    <ion-icon name="close"></ion-icon>
+                </span>
+
+                <div class="e-img">
+                    <h2 class="form-header">Employee Data</h2>
+                    <ion-icon name="person-circle-outline"></ion-icon>
+                    <div class="e-photo">
+                        <input type="file" name="image" id="image">
+                    </div>
+                </div>
+                
+                <div class="form-box">
+                    <div class="form-box-input">
+                        <h4>Employee Information</h4>
+                        <div class="input-box">
+                            <label for="e_name">Employee Name</label>
+                            <input type="text" name="e_name" id="e_name">
+                        </div>
+
+                        <div class="input-box">
+                            <label for="d_id" class="form-body">Department Name</label>
+                            <select class="form-control" name="d_id" id="d_id" placeholder="Department">
+                                <option>Accounting Department</option>
+                                <option>Admin Department</option>
+                                <option>Human Resource Department</option>
+                            </select>
+                        </div>
+
+                        <div class="input-box">
+                            <label for="email" class="col-form-label col-lg-4">Email</label>
+                            <input type="text" name="email" id="email">
+                        </div>
+
+                        <div class="input-box">
+                            <label for="gender" class="e-gender">Gender</label>
+                            <select class="form-gender" name="e-gender" id="id_gender" placeholder="Gender">
+                                <option>Male</option>
+                                <option>Female</option>
+                            </select>
+                        </div>
+
+                        <div class="input-box">
+                            <label for="s_id" class="shift_form">Shift</label>
+                            <div class="col p-0">
+                                <select class="form-control" name="s_id" id="s_id">
+                                    <option>1 = 08:00:00 - 16:00:00</option>
+                                    <option>1 = 13:00:00 - 21:00:00</option>
+                                    <option>1 = 18:00:00 - 02:00:00</option>
+                                </select>
+                            </div>
+
+                        <div class="input-box">
+                            <label for="e_birth_date" class="birth_date">Date of Birth</label>
+                            <div class="col-lg p-0">
+                                <input type="date" class="form-control col-lg" name="e_birth_date" id="e_birth_date" min="1990-01-01" max="2023-01-01">
+                            </div>
+                        </div>
+
+                        <div class="input-box">
+                            <label for="e_hire_date" class="hire_date">Hired Date</label>
+                            <div class="col-lg p-0">
+                                <input type="date" class="form-control col-lg" name="e_hire_date" id="e_hire_date" min="2004-04-16" max="2023-01-01">
+                            </div>
+                        </div>
+
+                        <div class="input-box">
+                            <label for="e_phone" class="ephone">Phone Number</label>
+                            <div class="e_phone">
+                                <input type="text" class="e_tell" name="country code" value="+63" size="1" />
+                                <input type="text" class="e_cp" name="phone" size="10" />
+                            </div>
+                        </div>
+
+                        <div class="input-box">
+                            <label for="e_address" class="eaddress">Address</label>
+                            <div class="e_address">
+                                <textarea name="e_address" id="e-address" cols="51" rows="8" value="address"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <!-- <div class="data-form">
+                        <div class="form-data">
+                            <label for="s_id" class="shift_form">Shift</label>
+                            <div class="col p-0">
+                                <select class="form-control" name="s_id" id="s_id">
+                                    <option>1 = 08:00:00 - 16:00:00</option>
+                                    <option>1 = 13:00:00 - 21:00:00</option>
+                                    <option>1 = 18:00:00 - 02:00:00</option>
+                                </select>
+                            </div>
+
+                        <div class="form-data">
+                            <label for="e_birth_date" class="birth_date">Employee D.O.B</label>
+                            <div class="col-lg p-0">
+                                <input type="date" class="form-control col-lg" name="e_birth_date" id="e_birth_date" min="1990-01-01" max="2023-01-01">
+                            </div>
+                        </div>
+
+                        <div class="form-data">
+                            <label for="e_hire_date" class="hire_date">Hired Date</label>
+                            <div class="col-lg p-0">
+                                <input type="date" class="form-control col-lg" name="e_hire_date" id="e_hire_date" min="2004-04-16" max="2023-01-01">
+                            </div>
+                        </div>
+                    </div> -->
+                    <button class="btn-AddtoSystem" onclick="etoggle()">
+                        <span>
+                            <ion-icon name="add-circle-outline"></ion-icon>
+                        </span>
+                        <span class="text">Add to system</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="assets/js/create-employee.js"></script>
+<script src="assets/js/dashboard.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

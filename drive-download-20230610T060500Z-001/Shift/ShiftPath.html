@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shift Path</title>
+
+    <link rel="stylesheet" href="assets/css/attendance.css">
+    <link rel="stylesheet" href="assets/css/edit.css">
+    <link rel="stylesheet" href="assets/css/shift.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="logo">
+                            <img src="assets/img/logo.png">
+                            <h2>Codeversity</h2>
+                        </span>
+                    </a>
+                </li>
+                <li class="list active">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="speedometer-outline"></ion-icon>
+                        </span>
+                        <span class="text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="business-outline"></ion-icon>
+                        </span>
+                        <span class="text">Department</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="calendar-clear-outline"></ion-icon>
+                        </span>
+                        <span class="text">Attendance</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="repeat-outline"></ion-icon>
+                        </span>
+                        <span class="text">Shift</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="id-card-outline"></ion-icon>
+                        </span>
+                        <span class="text">Employee</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                        <span class="text">Logout</span>
+                    </a>
+                </li>
+                <div class="indicator"></div>
+            </ul>
+        </div>
+        
+        
+        <!-- ============================= Main ========================== -->
+
+        <div class="main">
+            <div class="main-top">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+                    
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search here">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
+
+                <div class="user">
+                    <img src="assets/img/profile_bg1.jpg">
+                </div>
+            </div>
+    
+            <!-- ======================== Shift Add  ====================== -->
+
+            <div class="edit_data">
+                <h1 class="etableName">Shift</h1>
+
+                <div class="edit-employee">
+                    <div class="attendances" id="a_popup">
+                        <button class="Attendance-back" onclick="etoggle()">
+                            <span class="add-icon">
+                                <ion-icon name="arrow-back-circle-outline"></ion-icon>
+                            </span>
+                            <span class="text">Back</span>
+                        </button>
+                    </div>
+
+                    <div class="edit-col2">
+                        <div class="editHeader">
+                            <h2>Shift Master Data</h2>
+                        </div>
+                        <div class="editContent">
+                            <h3>Add New Shift</h3>
+                            <div class="contentHeader">
+                                <p>Form to add new shift to system</p>
+                                <div class="e_content">
+                                    <div class="e-data">
+                                        <label class="e-id">Shift Number </label>
+                                        <input disabled type="text" placeholder="1">
+                                    </div>
+                                </div>
+
+                                <div class="s-dataname">
+                                    <label class="e-dname">Shift Start Time</label>
+                                    <div class="s-shift-input">
+                                        <input class="shift-input" type="number" placeholder="Hour">
+                                        <input class="shift-input" type="number" placeholder="Minutes">
+                                        <input class="shift-input" type="number" placeholder="Seconds">
+                                    </div>
+                                </div>
+
+                                <div class="s-end">
+                                    <label class="e-end">Shift Start Time</label>
+                                    <div class="s-end-input">
+                                        <input class="shift-input" type="number" placeholder="Hour">
+                                        <input class="shift-input" type="number" placeholder="Minutes">
+                                        <input class="shift-input" type="number" placeholder="Seconds">
+                                    </div>
+
+
+                                    <div class="s-button">
+                                        <button class="e-save" onclick="etoggle()">
+                                            <span class="add-icon">
+                                                <ion-icon name="checkmark-outline"></ion-icon>
+                                            </span>
+                                            <span class="text">Add to system</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>                                
+        </div>
+    </div>
+</html>
+<script src="assets/js/dashboard.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
