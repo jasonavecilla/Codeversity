@@ -10,7 +10,7 @@
 
 - Ted Llanes - Developer
 
-- Jonalyn Pobocan Salvosa-Boaloy 
+- Jonalyn Pobocan Salvosa-Boaloy - Developer
 ## Tech Used 
 - JavaScript
 - PHP
