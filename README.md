@@ -42,4 +42,3 @@
 
 ![App Screenshot](https://cdn.fbsbx.com/v/t59.2708-21/446123836_967731835009494_2168689658057189382_n.gif?_nc_cat=105&ccb=1-7&_nc_sid=cf94fc&_nc_eui2=AeE2gQfKZN8QHtBqWJZMLdi2AHpNHeJO3LgAek0d4k7cuOCi2rchX-vTUYi1kGMDR7ymLrbkhwCuu3_Q15fACYqI&_nc_ohc=_WJrLQa3nH0Q7kNvgF5E2WE&_nc_ht=cdn.fbsbx.com&oh=03_Q7cD1QEGQyBv9_OsvsyrrG1m7UNOIxM0ZNyfXNVQe89UoPB-pQ&oe=665F9FE9)
 
-![App Screenshot](https://cdn.fbsbx.com/v/t59.2708-21/446123836_967731835009494_2168689658057189382_n.gif?_nc_cat=105&ccb=1-7&_nc_sid=cf94fc&_nc_eui2=AeE2gQfKZN8QHtBqWJZMLdi2AHpNHeJO3LgAek0d4k7cuOCi2rchX-vTUYi1kGMDR7ymLrbkhwCuu3_Q15fACYqI&_nc_ohc=_WJrLQa3nH0Q7kNvgF5E2WE&_nc_ht=cdn.fbsbx.com&oh=03_Q7cD1QEGQyBv9_OsvsyrrG1m7UNOIxM0ZNyfXNVQe89UoPB-pQ&oe=665F9FE9)
